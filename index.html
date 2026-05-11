@@ -1,0 +1,241 @@
+# Hardware
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI 後螢幕時代：機密藍圖</title>
+    <style>
+        :root {
+            --dark-blue: #000c1f;
+            --bright-yellow: #f1c40f;
+            --bright-white: #ffffff;
+            --accent-blue: #003366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-blue);
+            color: var(--bright-white);
+            overflow-x: hidden;
+            /* 漣漪瀑布式漸層背景 */
+            background: linear-gradient(180deg, #000c1f 0%, #001a33 50%, #003366 100%);
+            background-attachment: fixed;
+        }
+
+        /* 智慧型跑馬燈 */
+        .marquee-container {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--bright-yellow);
+        }
+
+        .marquee-content {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        .marquee-content span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-right: 50px;
+        }
+
+        .text-yellow { color: var(--bright-yellow); }
+        .text-white { color: var(--bright-white); }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* 主區塊佈局 */
+        .container {
+            max-width: 1000px;
+            margin: 100px auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--bright-yellow);
+            text-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s all ease;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            color: var(--bright-white);
+        }
+
+        /* 圖片美化 CSS */
+        .blueprint-img {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px var(--accent-blue);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 40px 0;
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+
+        .blueprint-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px var(--bright-yellow);
+        }
+
+        /* 內容區塊 */
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 0.8s all ease;
+        }
+
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            color: var(--bright-yellow);
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        /* 點擊漣漪特效 */
+        .ripple {
+            position: absolute;
+            background: rgba(241, 196, 15, 0.4);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-effect 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-effect {
+            to { transform: scale(4); opacity: 0; }
+        }
+
+        footer {
+            padding: 50px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body onclick="createRipple(event)">
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span class="text-yellow">⚠ TOP SECRET: OpenAI Post-Smartphone Era Blueprint</span>
+            <span class="text-white">世代差距：年輕人將 AI 視為「人生導師」與「作業系統」</span>
+            <span class="text-yellow">硬體革命：Sam Altman 與 Jony Ive 聯手打造無螢幕 AI 神裝</span>
+            <span class="text-white">技術核心：1.4 兆美元算力、記憶型 Agent、自研晶片</span>
+            <span class="text-yellow">願景時程：2028 年量產，取代現有智慧型手機</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 id="main-title">後智慧型手機時代</h1>
+        <p class="subtitle">OpenAI 後螢幕時代的機密藍圖</p>
+
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000" alt="AI Interface" class="blueprint-img">
+
+        <div class="section">
+            <h2>01. 世代的使用斷層 (Generational Divide)</h2>
+            <p>
+                根據 Sam Altman 的觀察，AI 的使用方式存在巨大的世代差異。超過 35 歲的用戶傾向將 ChatGPT 當作「更強大的 Google」來搜尋資料；然而，Gen Z 與大學生則將其視為<b>「人生導師」(Life Advisor)</b>。他們在吃飯、睡覺、甚至買股決策前都會先諮詢 AI，將其融入日常決策的每一環節。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>02. 無螢幕硬體的覺醒 (The "io" Project)</h2>
+            <p>
+                OpenAI 不滿足於軟體應用。傳聞正與蘋果傳奇設計師 <b>Jony Ive</b> 秘密研發名為「io」的硬體。這將是一系列「無螢幕」裝置，旨在讓使用者從鍵盤與螢幕中解放。這類裝置將以語音為主流互動方式，具備主動服務、理解自然語言的能力，徹底挑戰持續 20 年的智慧手機王朝。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>03. 重新定義作業系統 (OpenAI OS)</h2>
+            <p>
+                未來的競爭不再是 App 的多寡，而是 <b>Agent (主動代理人)</b> 的智慧程度。Sam Altman 暗示正在重新思考作業系統。透過自研晶片與大規模算力支持，AI 將從「反應式工具」演進為「主動代理人」，具備個性化記憶，成為用戶無法被取代的數位外掛大腦。
+            </p>
+        </div>
+
+        <footer>
+            © 2026 OpenAI Confidential Vision Portfolio | Designed for Future Platforms
+        </footer>
+    </div>
+
+    <script>
+        // 標題進場動畫
+        window.onload = () => {
+            document.getElementById('main-title').style.opacity = '1';
+            document.getElementById('main-title').style.transform = 'translateY(0)';
+        }
+
+        // 滾動偵測優化
+        const sections = document.querySelectorAll('.section');
+        const observerOptions = { threshold: 0.2 };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // 點擊漣漪互動特效
+        function createRipple(event) {
+            const body = document.body;
+            const ripple = document.createElement("span");
+            ripple.classList.add("ripple");
+            
+            const x = event.pageX;
+            const y = event.pageY;
+
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+
+            body.appendChild(ripple);
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+    </script>
+</body>
+</html>
